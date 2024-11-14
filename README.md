@@ -20,24 +20,26 @@
 ## 如何使用 .editorconfig 與 CI Lint 檢查
 
 1.  確認 .editorconfig 已正確放置：
-    - 請確保 .editorconfig 文件位於專案的根目錄中，並且包含必要的格式規範。
-    - 可以依照提供的 .editorconfig 範例進行修改或擴展，以符合專案需求。
+
+-   請確保 .editorconfig 文件位於專案的根目錄中，並且包含必要的格式規範。
+-   可以依照提供的 .editorconfig 範例進行修改或擴展，以符合專案需求。
+
 2.  使用 IDE 自動套用格式設定：
 
-    - 如果您使用的是 Visual Studio 或 Visual Studio Code，這些 IDE 會自動根據 .editorconfig 進行格式化。
-    - 建議在開發過程中開啟 格式化儲存 功能 (Format on Save)，這樣每次儲存時 IDE 會自動應用規範，減少手動調整的時間。
+-   如果您使用的是 Visual Studio 或 Visual Studio Code，這些 IDE 會自動根據 .editorconfig 進行格式化。
+-   建議在開發過程中開啟 格式化儲存 功能 (Format on Save)，這樣每次儲存時 IDE 會自動應用規範，減少手動調整的時間。
 
 3.  使用 CI Lint 檢查：
 
-    - 在提交程式碼後，CI 管線會自動運行 CI Lint，檢查是否符合 .editorconfig 規範。
-    - 如發現有不符合規範的程式碼，CI Lint 會在管線中返回詳細的錯誤訊息。
+-   在提交程式碼後，CI 管線會自動運行 CI Lint，檢查是否符合 .editorconfig 規範。
+-   如發現有不符合規範的程式碼，CI Lint 會在管線中返回詳細的錯誤訊息。
 
 4.  手動運行 Lint 檢查（選用）：
 
-        - 在提交前，可以手動執行 Lint 檢查，避免提交後出現大量風格問題。若您使用的是 .NET Core，可以透過以下指令手動檢查程式碼：
+-   在提交前，可以手動執行 Lint 檢查，避免提交後出現大量風格問題。若您使用的是 .NET Core，可以透過以下指令手動檢查程式碼：
 
-        ```bash
-        dotnet format --verify-no-changes
-        ```
+    ```bash
+    dotnet format --verify-no-changes
+    ```
 
-    dotnet format --verify-no-changes cub_EditorConfig.sln - 此指令會檢查 .editorconfig 設定，並返回不符合規範的部分。如果有不符規範的地方，程式碼需要調整後再提交。
+-   此指令會檢查 .editorconfig 設定，並返回不符合規範的部分。如果有不符規範的地方，程式碼需要調整後再提交。
